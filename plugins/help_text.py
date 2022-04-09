@@ -43,13 +43,13 @@ async def help_user(bot, update):
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked":
-               await update.reply_text(" Sorry, You're Banned")
+               await update.reply_text("Banlandın.")
                return
         except UserNotParticipant:
             await update.reply_text(
-                text="**Due To The Huge Traffic Only Channel Members Can Use This Bot Means You Need To Join The Below Mentioned Channel Before Using Me! **",
+                text="**Aşağıdaki kanala katıl**",
                 reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
+                    [ InlineKeyboardButton(text="Test Kanalı", url=f"https://t.me/{update_channel}")]
               ])
             )
             return
@@ -60,15 +60,15 @@ async def help_user(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('📝Rename', callback_data = "rnme"),
-                    InlineKeyboardButton('📂File To Video', callback_data = "f2v")
+                    InlineKeyboardButton('📝Yeniden Adlandır', callback_data = "rnme"),
+                    InlineKeyboardButton('📂Dosyadan videoya', callback_data = "f2v")
                 ],
                 [
-                    InlineKeyboardButton('🎞️Custom Thumbnail', callback_data = "cthumb"),
-                    InlineKeyboardButton('📑Custom Caption', callback_data = "ccaption")
+                    InlineKeyboardButton('🎞️ Varsayılan Thumbail', callback_data = "cthumb"),
+                    InlineKeyboardButton('📑Varsayılan Caption', callback_data = "ccaption")
                 ],
                 [
-                    InlineKeyboardButton('💬About', callback_data = "about")
+                    InlineKeyboardButton('💬Hakkında', callback_data = "about")
                 ]
             ]
         )
@@ -77,26 +77,11 @@ async def help_user(bot, update):
 @Mai_bOTs.on_message(pyrogram.filters.command(["start"]))
 async def start_me(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
-        await update.reply_text("You are Banned")
+        await update.reply_text("BaNlaNDın")
         return
     update_channel = Config.UPDATE_CHANNEL
-    if update_channel:
-        try:
-            user = await bot.get_chat_member(update_channel, update.chat.id)
-            if user.status == "kicked":
-               await update.reply_text(" Sorry,You've Been Flooding Me So My Owner Removed You From Using Me If You Think It's An Error Contact : @Faris_TG")
-               return
-        except UserNotParticipant:
-            await update.reply_text(
-                text="**Due To The Huge Traffic Only Channel Members Can Use This Bot Means You Need To Join The Below Mentioned Channel Before Using Me! **",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
-              ])
-            )
-            return
-        else:
-            await update.reply_text(Translation.START_TEXT.format(update.from_user.first_name),
-        reply_markup=InlineKeyboardMarkup(
+    await update.reply_text(Translation.START_TEXT.format(update.from_user.first_name),
+    reply_markup=InlineKeyboardMarkup(
             [
                 [
                         InlineKeyboardButton("Help", callback_data = "ghelp")
@@ -113,7 +98,7 @@ async def start_me(bot, update):
         ),
         reply_to_message_id=update.message_id
     )
-            return 
+  return 
 
 @Mai_bOTs.on_callback_query()
 async def cb_handler(client: Mai_bOTs , query: CallbackQuery):
@@ -125,8 +110,8 @@ async def cb_handler(client: Mai_bOTs , query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Back', callback_data = "ghelp"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    InlineKeyboardButton('Geri', callback_data = "ghelp"),
+                    InlineKeyboardButton("🔒 Kapat", callback_data = "close")
                 ]
             ]
         )
@@ -138,8 +123,8 @@ async def cb_handler(client: Mai_bOTs , query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Back', callback_data = "ghelp"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    InlineKeyboardButton('Geri', callback_data = "ghelp"),
+                    InlineKeyboardButton("🔒 Kapat", callback_data = "close")
                 ]
             ]
         )
