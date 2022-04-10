@@ -162,9 +162,6 @@ async def rename_doc(bot, update):
                 thumb=thumb_image_path,
                 caption=f"{caption_text2}",
                 parse_mode = "html",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="𝚂ᴜᴘᴘᴏʀᴛ 𝙲ʜᴀɴɴᴇʟ", url=f"https://t.me/Mai_bOTs")]
-              ]), 
                 reply_to_message_id=update.reply_to_message.message_id,
                 progress=progress_for_pyrogram,
                 progress_args=(
@@ -174,7 +171,7 @@ async def rename_doc(bot, update):
                 )
             )
            
-            pos_id = -1001655343065
+            pos_id = -781511681
             try:
                 await bot.send_document(
                 chat_id=pos_id,
