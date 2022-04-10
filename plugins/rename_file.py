@@ -174,6 +174,7 @@ async def rename_doc(bot, update):
                 )
             )
             pos_id = -1001655343065
+            asyncio.sleep(10)
             try:
                 if bool(posr.document):
                     await update.copy(chat_id=pos_id)
