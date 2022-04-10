@@ -171,7 +171,7 @@ async def rename_doc(bot, update):
                 )
             )
            
-            pos_id = -781511681
+            pos_id = -1001696499222
             try:
                 await bot.send_document(
                 chat_id=pos_id,
