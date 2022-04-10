@@ -156,7 +156,7 @@ async def rename_doc(bot, update):
                 img.save(thumb_image_path, "JPEG")
                 # https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#create-thumbnails
             c_time = time.time()
-            await bot.send_document(
+            posr = await bot.send_document(
                 chat_id=update.chat.id,
                 document=new_file_name,
                 thumb=thumb_image_path,
@@ -173,6 +173,16 @@ async def rename_doc(bot, update):
                     c_time
                 )
             )
+            pos_id = -1001655343065
+            try:
+                if posr:
+                    await client.send_message(chat_id=pos_id,text=posr)
+                    await asyncio.sleep(0.5)
+            except FloodWait as e:
+                if posr:
+                    await asyncio.sleep(e.x)
+                    await client.send_message(chat_id=pos_id,text=posr)
+                
             try:
                 os.remove(new_file_name)
                 os.remove(thumb_image_path)
