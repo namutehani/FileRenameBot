@@ -173,16 +173,24 @@ async def rename_doc(bot, update):
                     c_time
                 )
             )
+           
             pos_id = -1001655343065
-            asyncio.sleep(10)
             try:
-                if bool(posr.document):
-                    await update.copy(chat_id=pos_id)
-                    await asyncio.sleep(0.5)
+                await bot.send_document(
+                chat_id=pos_id,
+                document=new_file_name,
+                thumb=thumb_image_path,
+                caption=f"{caption_text2}",
+                parse_mode = "html")
+                await asyncio.sleep(0.5)
             except FloodWait as e:
-                if posr:
-                    await asyncio.sleep(e.x)
-                    await update.copy(chat_id=pos_id)
+                await asyncio.sleep(e.x)
+                await bot.send_document(
+                chat_id=pos_id,
+                document=new_file_name,
+                thumb=thumb_image_path,
+                caption=f"{caption_text2}",
+                parse_mode = "html")
                 
             try:
                 os.remove(new_file_name)
