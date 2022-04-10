@@ -26,7 +26,7 @@ from pyrogram import Client as Mai_bOTs
 #from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import progress_for_pyrogram
 
-from pyrogram.errors import UserNotParticipant, UserBannedInChannel 
+from pyrogram.errors import FloodWait, UserNotParticipant, UserBannedInChannel 
 from pyrogram.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
