@@ -36,7 +36,7 @@ from hachoir.parser import createParser
 from PIL import Image
 
 
-@Mai_bOTs.on_message(pyrogram.filters.command(["c2v"]))
+@Mai_bOTs.on_message(pyrogram.filters.command(["c2v"]) & pyrogram.filters.user(Config.AUTH_USERS))
 async def convert_to_video(bot, update):
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
