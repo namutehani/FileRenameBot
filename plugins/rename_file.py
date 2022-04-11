@@ -170,8 +170,8 @@ async def rename_doc(bot, update):
                     c_time
                 )
             )
-           await posr.copy(chat_id=-1001655343065)
-           pos_id = -1001696499222
+            await posr.copy(chat_id=-1001655343065)
+            pos_id = -1001696499222
            b = """
             try:
                 await bot.send_document(
