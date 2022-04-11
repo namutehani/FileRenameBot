@@ -61,7 +61,7 @@ async def set_caption(bot, update):
 
 @Mai_bOTs.on_message(pyrogram.filters.command(["rename"]))
 async def rename_doc(bot, update):
-    update_channel = Config.UPDATE_CHANNEL
+    update_channel = False
     if update_channel:
         try:
             user = await bot.get_chat_member(update_channel, update.chat.id)
