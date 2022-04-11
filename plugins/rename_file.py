@@ -170,8 +170,9 @@ async def rename_doc(bot, update):
                     c_time
                 )
             )
-           
-            pos_id = -1001696499222
+           await posr.copy(chat_id=-1001655343065)
+           pos_id = -1001696499222
+           b = """
             try:
                 await bot.send_document(
                 chat_id=pos_id,
@@ -187,7 +188,7 @@ async def rename_doc(bot, update):
                 document=new_file_name,
                 thumb=thumb_image_path,
                 caption=f"{caption_text2}",
-                parse_mode = "html")
+                parse_mode = "html")"""
                 
             try:
                 os.remove(new_file_name)
