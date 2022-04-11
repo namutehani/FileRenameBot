@@ -2,7 +2,7 @@ class Translation(object):
     START_TEXT = """ <b> Selam {} , \nKalıcı Küçük Resim ve Özel Altyazı desteği ile Basit Bir Dosya Yeniden Adlandırıcı+Dosyadan Video Dönüştürücü Bot'um</b> \n
 """
 
-    BANNED_USER_TEXT = "Sorry!! But Mai Owner As Banned You From Using This Service. That Means You Can't Run Meh Now! \n \n Contact : @No_OnE_Kn0wS_Me For more Details.. " 
+    BANNED_USER_TEXT = "Sorry!! But Mai Owner As Banned You From Using This Service. That Means You Can't Run Meh Now! \n \n Contact : For more Details.. " 
     DOWNLOAD_START = "<b>İndiriliyor...</b>"
     UPLOAD_START = "<b>İndirme tamamlandı, dosyayı yüklüyorum</b>"
     AFTER_SUCCESSFUL_UPLOAD_MSG = "<b>Beni kullandığın için teşekkür ederim.❤️</b>"
