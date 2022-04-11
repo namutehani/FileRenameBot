@@ -13,9 +13,13 @@ class Config(object):
     # Get these values from my.telegram.org
     CHAT_ID = os.environ.get("CHAT_ID", "")
     # Array to store users who are authorized to use the bot
-    AUTH_USERS = []
-    AUTH_USER = (AUTH_USERS.append(int(x)) for x in os.environ.get("AUTH_USERS", "").split())
-    
+       
+    try:
+        AUTH_USERS = []
+        for x in (os.environ.get("ADMINS", "").split()):
+            AUTH_USERS.append(int(x))
+    except ValueError:
+        raise Exception("Your Admins list does not contain valid integers.")
     # Banned Unwanted Members..
     BANNED_USERS = []
     # the download location, where the HTTP Server runs
