@@ -36,7 +36,7 @@ from database.database import *
 from database.db import *
 
 
-@Mai_bOTs.on_message(pyrogram.filters.command(["help"]))
+@Mai_bOTs.on_message(pyrogram.filters.command(["help"]) & pyrogram.filters.user(Config.AUTH_USERS) )
 async def help_user(bot, update):
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
@@ -74,7 +74,7 @@ async def help_user(bot, update):
         )
     )       
 
-@Mai_bOTs.on_message(pyrogram.filters.command(["start"]))
+@Mai_bOTs.on_message(pyrogram.filters.command(["start"]) & pyrogram.filters.user(Config.AUTH_USERS))
 async def start_me(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await update.reply_text("BaNlaNDın")
