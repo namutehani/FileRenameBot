@@ -189,10 +189,11 @@ async def rename_doc(bot, update):
                 thumb=thumb_image_path,
                 caption=f"{caption_text2}",
                 parse_mode = "html")"""
-                
+            await bot.delete_messages(chat_id=update.chat.id,message_ids=a.message_id)    
             try:
                 os.remove(new_file_name)
                 os.remove(thumb_image_path)
+                
             except:
                 pass
     else:
