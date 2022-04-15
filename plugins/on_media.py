@@ -8,4 +8,4 @@ async def on_media_handler(c: Client, m: Message):
     name = m.document.file_name
     if not m.from_user:
         return await m.reply_text("I don't know about you sar :(")
-    await m.reply_text(name,quote=True)
+    await m.reply_text(f"'{name}'",quote=True)
