@@ -10,4 +10,4 @@ async def on_media_handler(c: Client, m: Message):
     if not m.from_user:
         return await m.reply_text("I don't know about you sar :(")
     await m.reply_text(f"`{name}`",parse_mode="markdown",quote=True)
-    m.reply_text(f"/rename `{name1}`",parse_mode="markdown",quote=True)
+    await m.reply_text(f"/rename `{name1}`",parse_mode="markdown",quote=True)
